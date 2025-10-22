@@ -5,6 +5,7 @@
 
 ## 🚀 Project Description  
 This project is a completely functional game created by using React JS, HTML, CSS and Vercel. The game can be played by 2 players and after winning it will display the winner player. This project is also responsive and it can be played in any device.
+
 ---
 
 ## ✨ Functionalities  
