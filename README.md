@@ -1,10 +1,10 @@
 # tic-tac-toe-game
-> This project is a responsive TicTacToe Game developed using React.
+> This project is a responsive TicTacToe Game developed by using React JS.
 
 ![Project Presentation](public/tictactoegame.png)
 
 ## 🚀 Project Description  
-This project is a completely functional game created by using React JS, HTML and CSS. The game can be played by 2 players and after winning it will display the winner player. This project is also responsive and it can be played in any device.
+This project is a completely functional game created by using React JS, HTML, CSS and Vercel. The game can be played by 2 players and after winning it will display the winner player. This project is also responsive and it can be played in any device.
 ---
 
 ## ✨ Functionalities  
@@ -19,7 +19,14 @@ This project is a completely functional game created by using React JS, HTML and
 | Technology        | Description         |  
 |--------------------|---------------------|  
 | React JS          | User Interface     |  
-| HTML/CSS         | Styling and Responsiveness       |  
+| HTML/CSS         | Styling and Responsiveness       | 
+| Vercel        | Deployment      | 
+
+
+---
+
+## 🔗 Demo 
+**Link:** [Vercel - Click here to see the demo project](https://tic-tac-toe-game-three-nu-25.vercel.app/)
 
 ---
 
