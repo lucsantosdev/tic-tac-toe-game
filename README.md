@@ -38,10 +38,13 @@ This project is a completely functional game created by using React JS, HTML, CS
 2. Navigate to the project directory:  
    ```bash
    cd tic-tac-toe-game
-3. Run the project:  
+3. Install dependencies:  
+   ```bash
+   npm install
+4. Run the project:  
    ```bash
    npm start
-4. Open http://localhost:3000 to view it in your browser
+5. Open http://localhost:3000 to view it in your browser
 
 ---
 
