@@ -9,7 +9,29 @@ const TicTacToe = () => {
 
     let [count, setCount] = useState(0);
     let [lock, setLock] = useState(false);
+    let [language, setLanguage] = useState('en');
     let titleRef = useRef(null);
+
+    const translations = {
+        en: {
+            title: 'TicTacToe Game by',
+            playerTurn: 'Player Turn:',
+            congratulations: 'Congratulations: Player',
+            won: 'Won!',
+            draw: 'It\'s a Draw!',
+            reset: 'Reset'
+        },
+        pt: {
+            title: 'Jogo da Velha por',
+            playerTurn: 'Vez do Jogador:',
+            congratulations: 'Parabéns: Jogador',
+            won: 'Venceu!',
+            draw: 'Empate! Jogo da Velha',
+            reset: 'Reiniciar'
+        }
+    };
+
+    const t = translations[language];
     let box1 = useRef(null);
     let box2 = useRef(null);
     let box3 = useRef(null);
@@ -60,27 +82,41 @@ const TicTacToe = () => {
         else if (data[0] === data[4] && data[4] === data[8] && data[8] !== "") {
             won(data[8]);
         }
-        else if (data[0] === data[1] && data[1] === data[2] && data[2] !== "") {
-            won(data[2]);
-        }
         else if (data[2] === data[4] && data[4] === data[6] && data[6] !== "") {
             won(data[6]);
+        }
+        else if (count === 9) {
+            draw();
         }
     }
 
     const won = (winner) => {
         setLock(true);
         if(winner === "X"){
-            titleRef.current.innerHTML = `Congratulations: Player <img src='${cross_icon}'> Won!`;
+            titleRef.current.innerHTML = `${t.congratulations} <img src='${cross_icon}'> ${t.won}`;
         } else {
-            titleRef.current.innerHTML = `Congratulations: Player <img src='${circle_icon}'> Won!`;
+            titleRef.current.innerHTML = `${t.congratulations} <img src='${circle_icon}'> ${t.won}`;
+        }
+    }
+
+    const draw = () => {
+        setLock(true);
+        titleRef.current.innerHTML = `${t.draw}`;
+    }
+
+    const toggleLanguage = () => {
+        const newLang = language === 'en' ? 'pt' : 'en';
+        setLanguage(newLang);
+        if (!lock) {
+            titleRef.current.innerHTML = `${translations[newLang].title} <span>@lucsantosdev</span>`;
         }
     }
 
     const resetGame = () => {
         setLock(false);
+        setCount(0);
         data = ["", "", "", "", "", "", "", "", ""];
-        titleRef.current.innerHTML = `TicTacToe Game by <span>@lucsantosdev</span>`;
+        titleRef.current.innerHTML = `${t.title} <span>@lucsantosdev</span>`;
         box_array.map((e) => {
             e.current.innerHTML = "";
         });
@@ -88,7 +124,15 @@ const TicTacToe = () => {
 
   return (
     <div className='container'>
-      <h1 className='title' ref={titleRef}>TicTacToe Game by <span>@lucsantosdev</span></h1>
+      <button className='language-toggle' onClick={toggleLanguage}>
+        {language === 'en' ? '🇧🇷 PT' : '🇺🇸 EN'}
+      </button>
+      <h1 className='title' ref={titleRef}>{t.title} <span>@lucsantosdev</span></h1>
+      <div className='player-turn'>
+        {!lock && (
+          <p>{t.playerTurn} {count % 2 === 0 ? <img src={cross_icon} alt="X" className='turn-icon' /> : <img src={circle_icon} alt="O" className='turn-icon' />}</p>
+        )}
+      </div>
       <div className="board">
         <div className="row1">
             <div className="boxes" ref={box1} onClick={(e)=>{toggle(e,0)}}></div>
@@ -106,7 +150,7 @@ const TicTacToe = () => {
             <div className="boxes" ref={box9} onClick={(e)=>{toggle(e,8)}}></div>
         </div>
       </div>
-      <button className='reset' onClick={() => {resetGame()}}>Reset</button>
+      <button className='reset' onClick={() => {resetGame()}}>{t.reset}</button>
     </div>
   );
 }
