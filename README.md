@@ -6,11 +6,21 @@
 ## 🚀 Project Description  
 This project is a completely functional game created by using React JS, HTML, CSS and Vercel. The game can be played by 2 players and after winning it will display the winner player. This project is also responsive and it can be played in any device.
 
+**Features:**
+- 🌐 Bilingual support (English/Portuguese) with language toggle
+- 🎮 Interactive gameplay with smooth animations
+- 🏆 Winner detection and draw state handling
+- 📱 Fully responsive design for all devices
+- 👥 Player turn indicator
+
 ---
 
 ## ✨ Functionalities  
 - **Interactive Game:** the game responds to user participation. 
 - **Winner Claim:** the winner is displayed on the screen.
+- **Bilingual Interface:** toggle between English and Portuguese.
+- **Player Turn Indicator:** shows which player's turn it is.
+- **Draw Detection:** detects and announces tie games.
 - **Authenticated Access:** play as many times as you want.
 - **Responsive Design:** for access on different devices.  
 
@@ -50,6 +60,11 @@ This project is a completely functional game created by using React JS, HTML, CS
 
 ## 📝 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+## 🎨 Credits & Attribution
+- **Favicon Icon:** [Tic tac toe icons created by Vectorsclub - Flaticon](https://www.flaticon.com/free-icons/tic-tac-toe)
 
 ---
 
