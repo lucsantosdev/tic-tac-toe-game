@@ -117,7 +117,7 @@ const TicTacToe = () => {
         setCount(0);
         data = ["", "", "", "", "", "", "", "", ""];
         titleRef.current.innerHTML = `${t.title} <span>@lucsantosdev</span>`;
-        box_array.map((e) => {
+        box_array.forEach((e) => {
             e.current.innerHTML = "";
         });
     }
